@@ -35,6 +35,10 @@ public class GreatestSumDivisibleByThree{
         divisibleNumber = digit;
     }
 
+    public  GreatestSumDivisibleByThree(){
+        divisibleNumber = 3;
+    }
+
     public int maxSumDivThree(int[] nums) {
         try{
             int[] arr = copyInputParametersForMutation(nums);
@@ -51,7 +55,6 @@ public class GreatestSumDivisibleByThree{
             throw ex;
         }
     }
-
 
     protected int computeMaxSumDivisible(int[] nums) {
         return computeMaxSumDivisible(nums, divisibleNumber);
@@ -90,13 +93,13 @@ public class GreatestSumDivisibleByThree{
         int[] arr = Arrays.copyOf(nums, nums.length);
         // deep copy , but arrayName.clone() -> returns the shallow copy of the array for non-primitive datatypes, but for primitive arrays, it does deep copy
 
-        if(Arrays.equals(arr,nums)){ // use deepEquals for non primitives
+        if(arr.equals(nums)){ // use deepEquals for non primitives
             System.out.println("they are same");
         }
 
         int[] arr1 = nums.clone();
 
-        if(Arrays.equals(arr1,nums)){
+        if(arr1.equals(nums)){
             System.out.println("they are same");
         }
 
